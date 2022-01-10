@@ -1,6 +1,11 @@
+header {
+  background-color: rosybrown;
+}
 body {
+  margin: 0%;
   height: 100%;
   width: 100%;
+  background-color: #e0e0e0;
 }
 #logo {
   height: 60px;
@@ -10,7 +15,22 @@ section {
   height: 100%;
   width: 100%;
 }
-
+#hotel {
+  background-color: rgb(132, 136, 139);
+  width: 50%;
+  height: 20%;
+  alignment: center;
+  margin: 2% 30%;
+}
+#info {
+  margin: 2%;
+}
+#tariff {
+  margin: 2%;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 1% 2%;
+}
 #radisson {
   height: 500px;
   width: 500px;
@@ -18,4 +38,7 @@ section {
 .socialmedia {
   height: 20px;
   width: 22px;
+}
+footer {
+  background-color: rosybrown;
 }

@@ -1,6 +1,11 @@
+header {
+  background-color: rosybrown;
+}
 body {
+  margin: 0%;
   height: 100%;
   width: 100%;
+  background-color: #e0e0e0;
 }
 #logo {
   height: 60px;
@@ -10,6 +15,11 @@ section {
   height: 100%;
   width: 100%;
 }
+.cards {
+  margin: 2%;
+  background-color: rgb(132, 136, 139);
+  width: 40%;
+}
 .hotels {
   height: 200px;
   width: 250px;
@@ -17,4 +27,7 @@ section {
 .socialmedia {
   height: 20px;
   width: 22px;
+}
+footer {
+  background-color: rosybrown;
 }
