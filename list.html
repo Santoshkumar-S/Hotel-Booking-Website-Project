@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>List</title>
-        <link rel="stylesheet" href="styles/list.css">
+        <link rel="stylesheet" href= "styles/list.css">
+        <link rel="stylesheet" href="styles/common.css">
+        <link rel="stylesheet" href= "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap">
     </head>
     <body>
         <div>
             <header>
                 <div>
                     <a href="index.html"><img src = "assests/images/logo.png" alt="logo" id= "logo"></a>
-                    <a href ="login.html">Login</a>
+                    <a href ="login.html" class= "login">Login</a>
                 </div>
             </header>
             
             <section>
-                <div>
-                    <ul>
+                <div class= hotelList>
+                    <div class= "list">
+                    <ul id= "view">
                         <li><a href ="#list-view">List View</a></li>   
                         <li><a href ="#map-view">Map view</a></li> 
                     </ul>
+                    </div>
 
                     <div id="list-view" class= "cards">
                         <a href="detail.html">
@@ -43,11 +49,9 @@
                         <p>4.0 Star</p>
                         <p>New Delhi</p>
                     </div>
-                    </div>
 
                     <div id="map-view">
-                        <img src="https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"/>
-                        <p>MAP VIEW</p>
+                        
                     </div>
 
                 </div>
@@ -55,18 +59,15 @@
             
             <footer>
                 <div>
-                <a href ="contact.html" target="_self">Contact Us</a>
-                </br>
-                <span>
-                <a href ="https://www.facebook.com" target="_blank"><img src="assests/images/facebook.png" alt="facebook" class= "socialmedia"></a>
-                <a href ="https://www.instagram.com" target="_blank"><img src="assests/images/instagram.png" alt="instagram" class= "socialmedia"></a>
-                <a href ="https://www.twitter.com" target="_blank"><img src="assests/images/twitter.png" alt="twitter" class= "socialmedia"></a>
-                </span>
-                </br>
-                <span>&#169;
-                2020 ROOM SEARCH PVT LTD</span>
+                    <a id="contact1" href ="contact.html" target="_self" class="contact">Contact Us</a>
+                    <p class="copyright"><span>&#169;</span> 2020 ROOM SEARCH PVT LTD</p>
+                    <div class= "icons">
+                        <a href ="https://www.facebook.com" target="_blank"><img src="assests/images/facebook.png" alt="facebook" class= "socialmedia"></a>
+                        <a href ="https://www.instagram.com" target="_blank"><img src="assests/images/instagram.png" alt="instagram" class= "socialmedia"></a>
+                        <a href ="https://www.twitter.com" target="_blank"><img src="assests/images/twitter.png" alt="twitter" class= "socialmedia"></a>
+                    </div>
                 </div>
-            </footer>
+                </footer>
         </div>
     </body>
 </html>

@@ -1,35 +1,14 @@
-header {
-  background-color: rosybrown;
-}
-body {
-  margin: 0%;
-  height: 100%;
-  width: 100%;
-  background-color: #e0e0e0;
-}
-#logo {
-  height: 60px;
-  width: 60px;
-}
-section {
-  height: 100%;
-  width: 100%;
-}
 #form {
   margin: 0% 4% 1% 4%;
 }
 #radisson {
-  margin: 2% 4% 0% 4%;
+  margin: 1% 4% 0% 4%;
+  padding-top: 2%;
   height: 500px;
   width: 500px;
 }
 #description {
+  position: absolute;
   margin: 1% 4% 2% 4%;
-}
-.socialmedia {
-  height: 20px;
-  width: 22px;
-}
-footer {
-  background-color: rosybrown;
+  padding-bottom: 6%;
 }

@@ -1,26 +1,9 @@
-header {
-  background-color: rosybrown;
-}
-body {
-  margin: 0%;
-  height: 100%;
-  width: 100%;
-  background-color: #e0e0e0;
-}
-#logo {
-  height: 60px;
-  width: 60px;
-}
-section {
-  height: 100%;
-  width: 100%;
-}
 #hotel {
   background-color: rgb(132, 136, 139);
   width: 50%;
   height: 20%;
-  alignment: center;
   margin: 2% 30%;
+  margin-top: 7%;
 }
 #info {
   margin: 2%;
@@ -35,10 +18,10 @@ section {
   height: 500px;
   width: 500px;
 }
-.socialmedia {
-  height: 20px;
-  width: 22px;
+#pay {
+  color: black;
+  text-decoration: none;
 }
-footer {
-  background-color: rosybrown;
+#payNow {
+  margin-bottom: 7%;
 }
