@@ -1,23 +1,18 @@
-.cards {
-  background-color: rgb(132, 136, 139);
+.image {
+  width: 250px;
+  height: 250px;
+  float: left;
+  padding-right: 30px;
+}
+.card {
+  background-color: lightgray;
   width: 40%;
   margin: 0px 70px 50px;
   display: inline-block;
 }
-.hotels {
-  height: 200px;
-  width: 250px;
-}
-.hotelList {
-  margin-bottom: 4%;
-}
-#list-view a {
+.card a {
   text-decoration: none;
   color: black;
-}
-.list ul {
-  list-style-type: none;
-  text-align: center;
 }
 .list ul a {
   color: black;
@@ -25,22 +20,10 @@
   text-decoration: none;
   padding: 20px;
 }
+.list ul {
+  list-style-type: none;
+  text-align: center;
+}
 .list ul li {
   display: inline;
-}
-#list_view {
-  scroll-behavior: smooth;
-}
-#map-view {
-  scroll-behavior: smooth;
-  display: none;
-}
-h3,
-p {
-  text-decoration: none;
-  color: black;
-}
-#view {
-  margin-top: 5%;
-  margin-bottom: 2%;
 }

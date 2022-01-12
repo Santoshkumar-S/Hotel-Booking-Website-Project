@@ -2,49 +2,39 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <title>Index</title>
-        <link rel="stylesheet" href= "styles/index.css">
         <link rel="stylesheet" href="styles/common.css">
-        <link rel="stylesheet" href= "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap">
+        <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap">
     </head>
-    
+
     <body>
         <div>
             <header>
-            <div>
-                <img src = "assests/images/logo.png" alt="logo" id= "logo">
-                <a href = "login.html" class= "login" >Login</a>
-            </div>
+                <img src="assests\images\logo.png" class="logo">
+                <div class="links"><a href="login.html" target="_self">Login</a></div>
             </header>
-
-            <section>
-            <div>
-                <div id = "searchbar"><form><input type = "text" placeholder = "City" id="searchbox"></form></div>
-                <div id= "images">
-                <a href="list.html"><img src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fe/a2/new-delhi.jpg" class= "cityimage"></a>
-                <img src ="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fc/f0/goa.jpg" class= "cityimage">
-                <img src ="https://media-cdn.tripadvisor.com/media/photo-s/0f/98/f7/df/charminar.jpg" class= "cityimage">
-                <img src ="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fe/ac/kolkata-calcutta.jpg" class= "cityimage">
-                </div>
-            </br>
-            </div>
-            <div class= "view">
-                <a href ="#" target="_self" class="view">View More>></a>
-            </div>
-            </section>
             
-            <footer>
-            <div>
-                <a id="contact1" href ="contact.html" target="_self" class="contact">Contact Us</a>
-                <p class="copyright"><span>&#169;</span> 2020 ROOM SEARCH PVT LTD</p>
-                <div class= "icons">
-                    <a href ="https://www.facebook.com" target="_blank"><img src="assests/images/facebook.png" alt="facebook" class= "socialmedia"></a>
-                    <a href ="https://www.instagram.com" target="_blank"><img src="assests/images/instagram.png" alt="instagram" class= "socialmedia"></a>
-                    <a href ="https://www.twitter.com" target="_blank"><img src="assests/images/twitter.png" alt="twitter" class= "socialmedia"></a>
-                </div>
+            <div id="city"><input type="text" placeholder="City" name="city"></div>
+            <div class="images">
+                <a href="list.html" target="_self"><img class="cards" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fe/a2/new-delhi.jpg"></a>
+                <img class="cards" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fc/f0/goa.jpg">
+                <img class="cards" src="https://media-cdn.tripadvisor.com/media/photo-s/0f/98/f7/df/charminar.jpg">
+                <img class="cards" src="https://media-cdn.tripadvisor.com/media/photo-s/15/33/fe/ac/kolkata-calcutta.jpg">
+                <br>
             </div>
+            <div class="view"><a href="#" target="_self" style="text-align: center">View more>></a></div>
+
+            <footer>
+                <a href="contact.html" target="_self" class="contact">Contact Us</a>
+                <div id="copyright"><span>&#169;</span> 2020 ROOM SEARCH PVT LTD</div>
+                <div class="icons">
+                    <a href="https://www.facebook.com/" target="_blank"><img class="social" src="assests/images/facebook.png"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img class="social" src="assests/images/instagram.png"></a>
+                    <a href="https://www.twitter.com/" target="_blank"><img class="social" src="assests/images/twitter.png"></a>
+                </div>
             </footer>
         </div>
     </body>
-</html> 
+</html>
