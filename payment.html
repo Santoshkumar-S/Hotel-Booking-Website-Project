@@ -7,47 +7,65 @@
         <link rel="stylesheet" href= "styles/payment.css">
         <link rel="stylesheet" href="styles/common.css">
         <link rel="stylesheet" href= "https://fonts.googleapis.com/css2?family=Ubuntu&display=swap">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
-    <body>
-        <div>
-            <header>
-                <a href="index.html"><img src = "assests/images/logo.png" alt="logo" id= "logo"></a>
-                <div class="links"><a href="login.html" target="_self">Login</a></div>
-            </header>
-
-            
-
-            <section>
-            <div id= "hotel">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg" id= "radisson">
-                <h2>Radisson Blu Hotel</h2>
-                <p>#38 of 1,289 hotels in New Delhi</p>
-                <p>National Highway 8, New Delhi 110017 India</p>
-            </div>
-            <div id="info">
-                <p><strong>Name:</strong>John Doe</p>
-                <p><strong>Number of Adults:</strong>2</p>
-                <p><strong>Check-in-Date:</strong>06/06/2020</p>
-                <p><strong>Check-out-Date:</strong>08/06/2020</p>
-            </div>
-            <div id= "tariff">  
-                <p><strong>Tariff Breakdown:</strong>Rs. 1000 x 2 Adults x 5 Nights</p>
-                <p><strong>Total Amount:</strong>Rs. 10000</p>
-            </div>
-            <div id="payNow">
-                <a href="#" id= "pay">Pay Now</a>
-            </div>
-            </section>
-
-            <footer>
-                <a href="contact.html" target="_self" class="contact">Contact Us</a>
-                <div id="copyright"><span>&#169;</span> 2020 ROOM SEARCH PVT LTD</div>
-                <div class="icons">
-                    <a href="https://www.facebook.com/" target="_blank"><img class="social" src="assests/images/facebook.png"></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img class="social" src="assests/images/instagram.png"></a>
-                    <a href="https://www.twitter.com/" target="_blank"><img class="social" src="assests/images/twitter.png"></a>
+    
+    <body style="background-color:#e0e0e0;font-family: 'Ubuntu',sans-serif;">
+        <div class="container-fluid">
+            <div id="header" class="row">
+                <div class="col-sm-4"><img class="logo" src="assests/images/logo.png" alt="logo"></div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-default btn-sm" id="login" data-toggle="modal" data-target="#myModal">LOGIN</button>
                 </div>
-            </footer>
+            </div>
+            
+            <div class="outer">
+                <div class="container1">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg" id="image">
+                    <div class="address">
+                        <span>
+                            <h3>Radisson Blu Hotel</h3>
+                            <p>#38 of 1,289 hotels in New Delhi</p>
+                            <p>National Highway 8,New Delhi 110017 India</p>
+                        </span>
+                    </div>
+                </div>
+                    <div id="information">
+                        <div class="left">
+                            <span>
+                                <p><b>Name: </b>John Doe</p>
+                                <p><b>Number of Adults: </b>2</p>
+                                <p><b>Check-in Date: </b>06/06/2020</p>
+                                <p><b>Check-out Date: </b>08/06/2020</p>
+                            </span>
+                        </div>
+                    
+                        <div class="middle">
+                            <span>
+                                <p><b>Tarrif Breakdown: </b>Rs.1000 x 2 Adults x 5 Nights</p>
+                                <p><b>Total Amount: </b>Rs. 10000</p>
+                            </span>
+                        </div>
+                        <div class="right"><a href="#" id="pay" role="button" class="btn btn-success disabled">Pay Now</a></div>
+                    </div>
+
+            <div class="row" id="footer">
+                <div class="col-sm-4">
+                    <div><a href= "contact.html" target="_self"><button type="button" class="btn btn-info btn-sm" id="contact">Contact Us</button></div></a>
+                </div>
+                <div class="col-sm-4" id="copyright"><span>&#169;</span> 2020 ROOM SEARCH PVT. LTD.</div>
+                <div class="col-sm-4">
+                    <div class="icons">
+                        <a href="https://www.facebook.com/" target="_blank"><img class="social" src="assests/images/facebook.png"></a>
+                        <a href="https://www.instagram.com/" target="_blank"><img class="social" src="assests/images/instagram.png"></a>
+                        <a href="https://www.twitter.com/" target="_blank"><img class="social" src="assests/images/twitter.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </body>
 </html>

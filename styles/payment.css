@@ -1,4 +1,4 @@
-.container {
+.container1 {
   background-color: rgb(132, 136, 139);
   width: 50%;
   height: 20%;
@@ -29,8 +29,8 @@
 .outer {
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
 }
-
 #information p {
   font-family: cursive;
 }
