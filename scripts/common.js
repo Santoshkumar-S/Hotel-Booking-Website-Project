@@ -1,7 +1,7 @@
 loginTemplate();
 footerTemplate();
 
-function loginTemplate() {
+function loginTemplate(){
     let login =
         '<div class="col-sm-4">' +
         '<img class="logo" src="assests/images/logo.png" alt="logo">' +
@@ -12,7 +12,7 @@ function loginTemplate() {
         "</div>";
     document.getElementById("header").innerHTML += login;
 }
-function footerTemplate() {
+function footerTemplate(){
     let footer =
         '<div class="col-md-4">' +
         "<div>" +

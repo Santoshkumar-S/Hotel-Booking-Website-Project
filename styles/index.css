@@ -87,7 +87,7 @@ input[type="text"]:focus {
   position: relative;
 }
 #viewMore {
-  display: none;
+  display: block;
 }
 @media screen and (max-width: 576px) {
   #search-bar {
