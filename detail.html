@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -14,11 +13,13 @@
         <link rel="stylesheet" href="styles/common.css" />
         <link rel="stylesheet" href="styles/detail.css" />
     </head>
+
     <body>
         <div id="loader"></div>
         <div class="main-container">
             <!-- Header -->
             <header class="header-footer" id="header"></header>
+
             <!-- Content  -->
             <div id="detail-container">
                 <div id="slideshow-booking">
@@ -35,6 +36,7 @@
                             </a>
                         </div>
                     </div>
+
                     <!-- Booking Form -->
                     <div id="booking-form">
                         <form action="payment.html" method="get" autocomplete="off">
@@ -42,23 +44,28 @@
                                 <label for="adult">Adults:</label>
                                 <input class="inner" type="number" name="adult" id="adult" value="1" min="1" oninput="updatePrice()" required />
                             </div>
+
                             <div class="outer">
                                 <label for="name">Name:</label>
                                 <input class="inner" type="text" name="name" id="name" required />
                             </div>
+
                             <div class="outer">
                                 <label for="fromDate">From Date:</label>
                                 <input class="inner" type="date" name="fromDate" id="fromDate" oninput="updatePrice()" required />
                             </div>
+
                             <div class="outer">
                                 <label for="toDate">To Date:</label>
                                 <input class="inner" type="date" name="toDate" id="toDate" oninput="updatePrice()" required />
                             </div>
+
                             <div class="outer">
                                 <label for="price">Total:</label>
                                 <input class="inner" type="text" name="price" id="price" readonly />
                                 <input class="inner" type="hidden" id="id" name="id" />
                             </div>
+
                             <div>
                                 <input type="submit" class="btn btn-outline-success" value="Book Now" id="book-now" />
                             </div>
@@ -80,9 +87,11 @@
                     <h5 class="heading" id="description">DESCRIPTION</h5>
                 </div>
             </div>
+
             <!-- Footer -->
             <footer class="header-footer" id="footer"></footer>
         </div>
+
         <script src="scripts/common.js"></script>
         <script src="scripts/detail.js"></script>
     </body>

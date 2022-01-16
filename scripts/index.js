@@ -2,7 +2,6 @@ const API_URL = "https://travel-advisor.p.rapidapi.com/";
 const travelAdvisorHost = "travel-advisor.p.rapidapi.com";
 const travelAdvisorKey = "1b62cf521fmsh0ba3e09fa30dcdbp1046a4jsn79954ea3eef0";
 
-
 let viewMore = () => {
     let viewMoreButtonElement = document.getElementById("view-more-button");
     if (viewMoreButtonElement.innerText == "View More") {
@@ -12,8 +11,7 @@ let viewMore = () => {
         document.getElementById("view-more-city-cards").style.display = "none";
         viewMoreButtonElement.innerText = "View More";
     }
-}
-
+};
 
 let debounce = (func, wait, immediate) => {
     let timeout;
@@ -34,62 +32,78 @@ let debounce = (func, wait, immediate) => {
 let search = () => {
     let currentFocus;
     let searchInputElement = document.getElementById("search-input");
-    searchInputElement.addEventListener("input", debounce(function(e) {
-        let newValue = this.value;
-        let xhr = new XMLHttpRequest();
-        if (!newValue || newValue.length < 3) {
-            closeAllLists();
-            return false;
-        }
-        xhr.addEventListener("readystatechange", function() {
-            if (this.readyState === this.DONE) {
+
+    searchInputElement.addEventListener(
+        "input",
+        debounce(function (e) {
+            let newValue = this.value;
+
+            let xhr = new XMLHttpRequest();
+            if (!newValue || newValue.length < 3) {
                 closeAllLists();
-                const data = JSON.parse(this.responseText).data;
-                const geos = data.filter((element) => {
-                    return element.result_type === "geos"
-                });
-                let loactionList = [];
-                geos.forEach((element) => {
-                    loactionList.push(element.result_object.name);
-                });
-                currentFocus = -1;
-                let searchListDiv = document.createElement("div");
-                searchListDiv.setAttribute("id", searchInputElement.id + "search-list");
-                searchListDiv.setAttribute("class", "search-items");
-                searchInputElement.parentNode.appendChild(searchListDiv);
-                for (let i = 0; i < loactionList.length; i++) {
-                    if ((loactionList[i].toUpperCase()).includes(newValue.toUpperCase())) {
-                        let listElementDiv = document.createElement("div");
-                        listElementDiv.setAttribute("onClick", "window.location='list.html?city=" + loactionList[i] + "'");
-                        listElementDiv.innerText = loactionList[i];
-                        listElementDiv.innerHTML += "<input type='hidden' value='" + loactionList[i] + "'>";
-                        listElementDiv.addEventListener("click", function(e) {
-                            searchInputElement.value = this.getElementsByTagName("input")[0].value;
-                            closeAllLists();
-                        });
-                        searchListDiv.appendChild(listElementDiv);
+                return false;
+            }
+
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === this.DONE) {
+                    closeAllLists();
+                    const data = JSON.parse(this.responseText).data;
+                    const geos = data.filter((element) => {
+                        return element.result_type === "geos";
+                    });
+                    let loactionList = [];
+                    geos.forEach((element) => {
+                        loactionList.push(element.result_object.name);
+                    });
+                    currentFocus = -1;
+
+                    let searchListDiv = document.createElement("div");
+                    searchListDiv.setAttribute("id", searchInputElement.id + "search-list");
+                    searchListDiv.setAttribute("class", "search-items");
+
+                    searchInputElement.parentNode.appendChild(searchListDiv);
+
+                    for (let i = 0; i < loactionList.length; i++) {
+                        if (loactionList[i].toUpperCase().includes(newValue.toUpperCase())) {
+                            let listElementDiv = document.createElement("div");
+                            listElementDiv.setAttribute("onClick", "window.location='list.html?city=" + loactionList[i] + "'");
+                            listElementDiv.innerText = loactionList[i];
+
+                            listElementDiv.innerHTML += "<input type='hidden' value='" + loactionList[i] + "'>";
+
+                            listElementDiv.addEventListener("click", function (e) {
+                                searchInputElement.value = this.getElementsByTagName("input")[0].value;
+
+                                closeAllLists();
+                            });
+                            searchListDiv.appendChild(listElementDiv);
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        xhr.open("GET", API_URL + "locations/auto-complete?lang=en_US&units=km&query=" + newValue);
-        xhr.setRequestHeader("x-rapidapi-host", travelAdvisorHost);
-        xhr.setRequestHeader("x-rapidapi-key", travelAdvisorKey);
-        xhr.send();
-    }, 500));
+            xhr.open("GET", API_URL + "locations/auto-complete?lang=en_US&units=km&query=" + newValue);
+            xhr.setRequestHeader("x-rapidapi-host", travelAdvisorHost);
+            xhr.setRequestHeader("x-rapidapi-key", travelAdvisorKey);
 
-    let closeAllLists = elmnt => {
+            xhr.send();
+        }, 500)
+    );
+
+    let closeAllLists = (elmnt) => {
         let x = document.getElementsByClassName("search-items");
         for (let i = 0; i < x.length; i++) {
             if (elmnt != x[i] && elmnt != searchInputElement) {
                 x[i].parentNode.removeChild(x[i]);
             }
         }
-    }
-    document.addEventListener("click", e => {
+    };
+
+    document.addEventListener("click", (e) => {
         closeAllLists(e.target);
     });
-}
+};
+
 search();
+
 disableLoader();

@@ -12,6 +12,7 @@
   right: 0;
   margin: auto;
 }
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);

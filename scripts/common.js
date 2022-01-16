@@ -21,7 +21,7 @@ let displayHeaderTemplate = () => {
                 <div class="modal-header">
                     <h5 class="modal-title" id="login-modal-label">Please Login</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -49,15 +49,14 @@ let displayHeaderTemplate = () => {
 // The footer template
 let displayFooterTemplate = () => {
     let footerTemplate = `<div id="contact">
-        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-backdrop="false" data-target="#contact-modal">Contact Us</button>
-        
+        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-backdrop="false" data-target="#contact-modal">Contact Us</button>       
         <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-label" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="contact-modal-label">Get in touch</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -78,7 +77,7 @@ let displayFooterTemplate = () => {
         </div>
     </div>
     <div id="copyright-text">
-        © 2020 ROOM SEARCH PVT. LTD.
+        <span>&#169;</span> 2020 ROOM SEARCH PVT. LTD.
     </div>
     <div id="social-media-images">
         <a href="https://www.facebook.com" target="_blank">
@@ -91,15 +90,12 @@ let displayFooterTemplate = () => {
             <img src="assests/images/twitter.png" class="social-media-image">
         </a>
     </div>`;
-
+    
     document.getElementById("footer").innerHTML += footerTemplate;
 };
-
 displayLoader();
-
 displayHeaderTemplate();
 displayFooterTemplate();
-
 let mainLogin = (e) => {
     if (localStorage.getItem("isLogin") === "true") {
         localStorage.setItem("isLogin", "false");
@@ -110,13 +106,10 @@ let mainLogin = (e) => {
 let login = (e) => {
     localStorage.setItem("username", "admin");
     localStorage.setItem("password", "admin");
-
     localStorage.setItem("isLogin", "false");
-
     e.preventDefault();
     let userElement = document.getElementById("username");
     let passwordElement = document.getElementById("password");
-
     if (userElement.value === localStorage.getItem("username") && passwordElement.value === localStorage.getItem("password")) {
         localStorage.setItem("isLogin", "true");
         alert("Successfully logged in!");
@@ -126,7 +119,6 @@ let login = (e) => {
         location.reload();
     } else {
         alert("Incorrect credentials! Login failed!");
-
         userElement.value = "";
         passwordElement.value = "";
     }
@@ -134,7 +126,6 @@ let login = (e) => {
 
 let isLogin = localStorage.getItem("isLogin");
 let loginElement = document.getElementById("login");
-
 let checkLogin = () => {
     if (!isLogin || isLogin === "false") {
         localStorage.clear();

@@ -1,48 +1,14 @@
-function mapView() {
-    document.getElementById('mapp').style.backgroundColor = "#007bff";
-    document.getElementById('list').style.backgroundColor = "transparent";
-    document.getElementById('list').style.border = "none";
-    if (document.getElementById('flex1')) {
-
-        if (document.getElementById('flex1').style.display == 'none') {
-            document.getElementById('flex1').style.display = 'none';
-            document.getElementById('map').style.display = 'block';
-        } else {
-            document.getElementById('flex1').style.display = 'none';
-            document.getElementById('map').style.display = 'block';
-        }
-    }
-}
-function listView() {
-    document.getElementById('list').style.backgroundColor = "#007bff";
-    document.getElementById('mapp').style.backgroundColor = "transparent";
-    document.getElementById('mapp').style.border = "none";
-    if (document.getElementById('map')) {
-
-        if (document.getElementById('map').style.display == 'none') {
-            document.getElementById('map').style.display = 'block';
-            document.getElementById('flex1').style.display = 'none';
-        } else {
-            document.getElementById('map').style.display = 'none';
-            document.getElementById('flex1').style.display = 'block';
-        }
-    }
-
-}
 let urlParams = new URLSearchParams(window.location.search);
 const API_URL = "https://travel-advisor.p.rapidapi.com/";
 const travelAdvisorHost = "travel-advisor.p.rapidapi.com";
 const travelAdvisorKey = "1b62cf521fmsh0ba3e09fa30dcdbp1046a4jsn79954ea3eef0";
 
-//this function is used to initialize the google map and place the markers at the position of the hotel from the API
-let initMap = locations => {
-    let center = {
-        lat: parseFloat(locations[0][1]),
-        lng: parseFloat(locations[0][2])
-    };
-    let map = new google.maps.Map(document.getElementById('map'), {
+//this function is used to initialize the google map and place the pointers at the position of the hotel from the API
+let initMap = (locations) => {
+    let center = { lat: parseFloat(locations[0][1]), lng: parseFloat(locations[0][2]) };
+    let map = new google.maps.Map(document.getElementById("map"), {
         zoom: 10,
-        center: center
+        center: center,
     });
     let infoWindow = new google.maps.InfoWindow({});
     let marker, count;
@@ -50,20 +16,24 @@ let initMap = locations => {
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[count][1], locations[count][2]),
             map: map,
-            title: locations[count][0]
+            title: locations[count][0],
         });
-        google.maps.event.addListener(marker, 'click', ((marker, count) => {
-            return function() {
-                infoWindow.setContent(locations[count][0]);
-                infoWindow.open(map, marker);
-            }
-        })(marker, count));
+        google.maps.event.addListener(
+            marker,
+            "click",
+            ((marker, count) => {
+                return function () {
+                    infoWindow.setContent(locations[count][0]);
+                    infoWindow.open(map, marker);
+                };
+            })(marker, count)
+        );
     }
-}
+};
 
-let initList = hotelList => {
-    let hotelListElement = document.getElementById('hotel-list');
-    hotelList.forEach(hotel => {
+let initList = (hotelList) => {
+    let hotelListElement = document.getElementById("hotel-list");
+    hotelList.forEach((hotel) => {
         let hotelLinkElement = document.createElement("a");
         hotelLinkElement.setAttribute("href", `detail.html?id=` + hotel.result_object.location_id);
         hotelListElement.appendChild(hotelLinkElement);
@@ -76,7 +46,7 @@ let initList = hotelList => {
         hotelDetailsContainer.setAttribute("class", "hotel-name-rating");
         hotelContainer.appendChild(hotelDetailsContainer);
         let hotelName = hotel.result_object.name;
-        if (hotelName.split(' ').length > 3) {
+        if (hotelName.split(" ").length > 3) {
             hotelDetailsContainer.innerHTML = "<h4>" + hotel.result_object.name + "</h4>";
             hotelDetailsContainer.innerHTML += "<div id='rating'>" + hotel.result_object.rating + " <span class='fa fa-star checked'></span></div>";
             hotelDetailsContainer.innerHTML += "<p style='font-size: small'>" + hotel.result_object.address + "</p>";
@@ -86,31 +56,29 @@ let initList = hotelList => {
             hotelDetailsContainer.innerHTML += "<p>" + hotel.result_object.address + "</p>";
         }
     });
-}
+};
 
-//This function is used to display the list of hotels in a particular city fetched from the API 
+//This function is used to display the list of hotels in a particular city fetched from the API
 let fetchHotelListAPI = () => {
     let xhr = new XMLHttpRequest();
-
-    xhr.addEventListener("readystatechange", function() {
+    xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             let result = JSON.parse(this.responseText).data;
             let locations = [];
-            hotelList = result.filter(item => item.result_type == "lodging");
-            hotelList.forEach(item => {
-                locations.push([item.result_object.name + "<br><a href=\"detail.html?id=" + item.result_object.location_id + "\">Book Hotel</a>", item.result_object.latitude, item.result_object.longitude]);
+            hotelList = result.filter((item) => item.result_type == "lodging");
+            hotelList.forEach((item) => {
+                locations.push([item.result_object.name + '<br><a href="detail.html?id=' + item.result_object.location_id + '">Book Hotel</a>', item.result_object.latitude, item.result_object.longitude]);
             });
             initList(hotelList);
             initMap(locations);
             disableLoader();
         }
     });
-
-    xhr.open("GET", API_URL + "locations/search?lang=en_US&limit=100&query=" + urlParams.get('city'));
+    xhr.open("GET", API_URL + "locations/search?lang=en_US&limit=100&query=" + urlParams.get("city"));
     xhr.setRequestHeader("x-rapidapi-host", travelAdvisorHost);
     xhr.setRequestHeader("x-rapidapi-key", travelAdvisorKey);
 
     xhr.send();
-}
+};
 
 fetchHotelListAPI();

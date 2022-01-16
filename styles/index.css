@@ -16,9 +16,12 @@
 .city-card-and-name-inner {
   position: relative;
 }
+
 #banner {
   background-image: url("https://media-cdn.tripadvisor.com/media/photo-o/14/10/2e/af/india.jpg");
+
   height: 380px;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
