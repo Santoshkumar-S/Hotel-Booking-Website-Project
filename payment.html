@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Payment</title>
-        <link rel="stylesheet" href="styles/payment.css" />
-        <link rel="stylesheet" href="styles/common.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="scripts/payment.js"></script>
+        <link rel="stylesheet" href="styles/loader.css">
+        <link rel="stylesheet" href="styles/common.css">
+        <link rel="stylesheet" href="styles/payment.css">
     </head>
-
     <body>
         <div id="loader"></div>
         <div class="main-container">
+            <!-- Header -->
             <header class="header-footer" id="header"></header>
-
+            <!-- Content -->
             <div id="payment-container">
                 <div id="hotel-details">
-                    <img class="hotel-image" id="hotel-image" alt="hotel-image" />
+                    <img class="hotel-image" id="hotel-image" alt="hotel-image">
                     <div class="hotel-name-rating">
                         <h2 id="hotel-name"></h2>
                         <p id="ranking"></p>
@@ -40,14 +39,13 @@
                         <p id="amount"></p>
                     </div>
                     <a href="#" id="pay-now">
-                        <button id="pay-now-button" type="button" class="btn btn-success" onclick="payNow(event)">Pay Now</button>
+                    <button id="pay-now-button" type="button" class="btn btn-success" onclick="payNow(event)">Pay Now</button>
                     </a>
                 </div>
             </div>
-
+            <!-- Footer -->
             <footer class="header-footer" id="footer"></footer>
         </div>
-
         <script src="scripts/common.js"></script>
         <script src="scripts/payment.js"></script>
     </body>

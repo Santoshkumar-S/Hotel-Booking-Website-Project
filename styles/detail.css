@@ -1,4 +1,60 @@
-#slideshow-container,
+.carousels {
+  width: 500px;
+  max-height: 350px;
+
+  display: block;
+  margin: 10px auto;
+}
+.inner {
+  display: flex;
+  flex-direction: row;
+  max-height: 400px;
+  border: 1px solid black;
+  align-items: center;
+  margin-top: 30px;
+}
+#demo {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  border-right: 1px solid black;
+}
+.right {
+  width: 30%;
+}
+label {
+  text-align: left;
+}
+input[type="text"],
+[type="number"],
+[type="date"] {
+  width: 60%;
+  float: right;
+}
+#book {
+  height: 40px;
+  margin: 0 auto;
+  display: block;
+}
+form {
+  padding: 0px 20px;
+}
+h5 {
+  font-family: cursive;
+  font-weight: bold;
+}
+.container-fluid {
+  margin-bottom: 100px;
+}
+.container-fluid h2 {
+  margin-top: 30px;
+}
+#arrow {
+  font-size: 55px;
+  color: rosybrown;
+}
+
+*/ #slideshow-container,
 #booking-form {
   padding: 1%;
   text-align: center;
@@ -53,13 +109,11 @@
   font-size: 55px;
   color: black;
 }
-
 .carousel-control-prev-icon:after {
   content: "<";
   font-size: 55px;
   color: black;
 }
-
 .carousel-control-next,
 .carousel-control-prev {
   z-index: 0;
@@ -67,18 +121,15 @@
 .carousel-image {
   max-height: 370px;
 }
-
 @media screen and (max-width: 576px) {
   #slideshow-container {
     margin-left: 0%;
     max-width: 100%;
     border-right: 1px solid black;
   }
-
   #booking-form {
     width: 100%;
   }
-
   #detail-container {
     margin-top: 20%;
     margin-bottom: 22%;
