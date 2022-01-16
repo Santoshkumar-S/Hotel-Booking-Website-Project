@@ -36,7 +36,9 @@ input[type="text"]:focus {
 }
 #view {
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 90px;
+  padding-bottom: 30px;
+  text-align: center;
 }
 .view a {
   text-decoration: none;
@@ -44,4 +46,81 @@ input[type="text"]:focus {
 }
 #flex1 {
   margin-left: 12%;
+}
+#inputBox {
+  display: flex;
+  justify-content: center;
+}
+.flex1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 50px 0px;
+}
+.background {
+  background-color: #f1f1f1;
+}
+.overlay {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  top: 0;
+  left: 0px;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25%;
+}
+.lay:hover .overlay {
+  opacity: 0.5;
+}
+.text {
+  color: #f1f1f1;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.lay {
+  position: relative;
+}
+#viewMore {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  #search-bar {
+    width: 60%;
+  }
+  .city-cards {
+    flex-direction: column;
+    margin: auto;
+  }
+  .city-image {
+    height: 200px;
+    width: 200px;
+  }
+  .city-card-and-name-inner {
+    padding: 4% 0%;
+  }
+  #view-more {
+    margin-bottom: 20%;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  #search-bar {
+    width: 60%;
+  }
+  .city-cards {
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .city-image {
+    height: 250px;
+    width: 260px;
+  }
+  .city-card-and-name-inner {
+    padding: 4% 0%;
+  }
 }

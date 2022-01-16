@@ -1,8 +1,9 @@
-#card {
+.carousels {
   width: 500px;
-  height: 500px;
   max-height: 350px;
-  margin: 10px 0px;
+
+  display: block;
+  margin: 10px auto;
 }
 .inner {
   display: flex;
@@ -10,9 +11,9 @@
   max-height: 400px;
   border: 1px solid black;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 7%;
 }
-.left {
+#demo {
   display: flex;
   justify-content: center;
   width: 70%;
@@ -44,4 +45,37 @@ h5 {
 }
 .container-fluid {
   margin-bottom: 100px;
+}
+.container-fluid h2 {
+  margin-top: 30px;
+}
+#arrow {
+  font-size: 55px;
+  color: rosybrown;
+}
+@media screen and (max-width: 576px) {
+  #slideshow-container {
+    margin-left: 0%;
+    max-width: 100%;
+    border-right: 1px solid black;
+  }
+  #booking-form {
+    width: 100%;
+  }
+  #detail-container {
+    margin-top: 20%;
+    margin-bottom: 22%;
+  }
+  #slideshow-booking {
+    flex-direction: column;
+  }
+  .slider-image {
+    max-height: 250px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  #detail-container {
+    margin-top: 10%;
+  }
 }

@@ -15,10 +15,10 @@ body {
   background-color: rosybrown;
   display: flex;
   align-items: center;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1;
-  justify-content: space-between;
 }
 #footer {
   background-color: rosybrown;
@@ -28,16 +28,15 @@ body {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
+
 .icons {
   float: right;
 }
 #login {
   float: right;
-  margin-right: 0;
+  margin-right: 2%;
   background-color: lightgray;
-  align-items: right;
 }
 .links a {
   text-decoration: none;
@@ -50,4 +49,11 @@ body {
 #copyright {
   font-size: 12px;
   text-align: center;
+}
+.rating {
+  color: orange;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
 }

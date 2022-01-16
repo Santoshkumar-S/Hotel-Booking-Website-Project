@@ -45,3 +45,42 @@
 .card1 h3 {
   margin-top: 30px;
 }
+.rating {
+  color: orange;
+}
+#noRating {
+  color: black;
+}
+.container-fluid {
+  margin-top: 100px;
+}
+@media screen and (max-width: 576px) {
+  #list-container {
+    margin-bottom: 150%;
+  }
+  #pills-tab {
+    padding-top: 15%;
+  }
+  .hotel {
+    width: 90%;
+    flex-direction: column;
+  }
+  .hotel-image-small {
+    width: 100%;
+  }
+  #map-view > img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  #pills-tab {
+    padding-top: 5%;
+  }
+  .hotel {
+    width: 90%;
+    flex-direction: column;
+  }
+  #map-view > img {
+    width: 100%;
+  }
+}
